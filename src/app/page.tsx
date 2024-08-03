@@ -1,20 +1,35 @@
 'use client';
+import Head from 'next/head';
+import Header from '@/app/components/Navbar';
+import HeroSection from '@/app/components/HeroSection';
+import ProductGrid from '@/app/components/ProductGrid';
+import FeaturedCategories from '@/app/components/FeaturedCategories';
+import Testimonials from '@/app/components/Testimonials';
+import Newsletter from '@/app/components/NewsLetter';
+import Carousel from '@/app/components/Carousel';
+import Footer from '@/app/components/Footer';
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import product1 from '@/app/images/braids-3959201_1280.jpg';
-import product2 from '@/app/images/fashion-5328924_1280.jpg';
-import product3 from '@/app/images/people-2583833_1280.jpg';
-import product4 from '@/app/images/t-shirt-design-2336850_1280.jpg';
-import Navbar from './components/Navbar';
-
-const HomePage = () => {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-black">
-      <Navbar/>
+    <div className="bg-white text-black">
+      <Head>
+        <title>FashionHub - Trendy Clothing</title>
+        <meta name="description" content="Discover the latest fashion trends at FashionHub." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      
+      
+      <main>
+        <Header/>
+
+        <HeroSection />
+        <Carousel />
+        <FeaturedCategories />
+        <ProductGrid />
+        <Testimonials />
+        <Newsletter />
+      </main>
+      <Footer />
     </div>
   );
-};
-
-export default HomePage;
+}
