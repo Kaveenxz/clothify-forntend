@@ -52,7 +52,7 @@ function SignInPage() {
         if (!isWrong) {
             try {
                 console.log(formData)
-                router.push('/home') // Redirect to home page
+                router.push('/') // Redirect to home page
             } catch (error: any) {
                 console.error(error);
             }
