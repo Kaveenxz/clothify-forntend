@@ -23,8 +23,8 @@ export default function Home() {
         <Header/>
 
         <HeroSection />
-        <Carousel />
         <FeaturedCategories />
+        <Carousel />
         <ProductGrid />
         <Testimonials />
         <Newsletter />
