@@ -10,9 +10,7 @@ import {
   HomeIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline'
-import {
-    
-} from 'lucide-react'
+import { LogOut } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -125,6 +123,17 @@ export default function Navbar() {
                             />
                             Settings
                           </Link>
+                          <Link
+                            href="/sign-in"
+                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-black hover:bg-[#1837DB] hover:text-white"
+                            onClick={() => setActiveItem('/sign-in')}
+                          >
+                            <LogOut
+                              className="h-6 w-6 shrink-0 text-[#1837DB] group-hover:text-white"
+                              aria-hidden="true"
+                            />
+                            Log out
+                          </Link>
                         </li>
                       </ul>
                     </nav>
@@ -135,9 +144,9 @@ export default function Navbar() {
           </Dialog>
         </Transition.Root>
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4 rounded-r-xl">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-800 px-6 pb-4 rounded-r-xl">
             <div className="flex h-16 shrink-0 items-center">
-                    <p className="text-2xl font-bold text-black ml-[15%]">ClothiFy</p>
+                    <p className="text-2xl font-bold text-white ml-[15%]">ClothiFy</p>
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -149,27 +158,28 @@ export default function Navbar() {
                           href={item.href}
                           className={classNames(
                             activeItem === item.href
-                              ? 'bg-[#1837DB] text-white'
-                              : 'text-black hover:text-white hover:bg-[#1837DB]',
-                            'group flex gap-x-6 rounded-md p-3 text-sm leading-6 font-semibold'
+                              ? 'bg-[#fff] text-black'
+                              : 'text-white hover:text-black hover:bg-[#fff]',
+                            'group flex gap-x-6 rounded-md p-3 text-sm leading-6 '
                           )}
                           onClick={() => setActiveItem(item.href)}
                         >
                           <item.icon
                             className={classNames(
-                              activeItem === item.href ? 'text-white' : 'text-[#1837DB] group-hover:text-white',
+                              activeItem === item.href ? 'text-black' : 'text-[#fff] group-hover:text-black',
                               'h-6 w-6 shrink-0'
                             )}
                             aria-hidden="true"
                           />
                           {item.name}
                         </Link>
+                        
                       </li>
                     ))}
                   </ul>
                 </li>
                 <li>
-                  <div className="text-sm font-semibold leading-6 text-gray-500">Help</div>
+                  <div className="text-sm font-semibold leading-6 text-white">Help</div>
                   <ul role="list" className="-mx-2 mt-1 space-y-3">
                     <li>
                      
@@ -178,22 +188,44 @@ export default function Navbar() {
                       <Link
                         href="/vendor-settings"
                         className={classNames(
-                          activeItem === '/vendor-settings'
-                            ? 'bg-[#1837DB] text-white'
-                            : 'text-black hover:text-white hover:bg-[#1837DB]',
-                          'group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold'
+                          activeItem === '/admin-settings'
+                            ? 'bg-[#fff] text-white'
+                            : 'text-white hover:text-black hover:bg-[#fff]',
+                          'group flex gap-x-3 rounded-md p-3 text-sm leading-6'
                         )}
                         onClick={() => setActiveItem('/vendor-settings')}
                       >
                         <Cog6ToothIcon
                           className={classNames(
-                            activeItem === '/vendor-settings' ? 'text-white' : 'text-[#1837DB] group-hover:text-white',
+                            activeItem === '/vendor-settings' ? 'text-black' : 'text-[#fff] group-hover:text-black',
                             'h-6 w-6 shrink-0'
                           )}
                           aria-hidden="true"
                         />
                         Settings
                       </Link>
+                      <Link
+                        href="/vendor-settings"
+                        className={classNames(
+                          activeItem === '/sign-in'
+                            ? 'bg-[#fff] text-white'
+                            : 'text-white hover:text-black hover:bg-[#fff]',
+                          'group flex gap-x-3 rounded-md p-3 text-sm leading-6'
+                        )}
+                        onClick={() => setActiveItem('/vendor-settings')}
+                      >
+                        <LogOut
+                          className={classNames(
+                            activeItem === '/sign-in' ? 'text-black' : 'text-[#fff] group-hover:text-black',
+                            'h-6 w-6 shrink-0'
+                          )}
+                          aria-hidden="true"
+                        />
+                        Log out
+                      </Link>
+                    </li>
+                    <li>
+                      
                     </li>
                   </ul>
                 </li>

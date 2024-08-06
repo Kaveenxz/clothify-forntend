@@ -125,8 +125,8 @@ function page() {
                 </div>
 
                 {method == 'General' &&
-                    <div className=' w-[70%]'>
-                        <div className='px-5 py-5'>
+                    <div className='w-[70%]'>
+                        <div className='px-3'>
                             <div className=''>
                                 <div className='border-2 rounded-3xl px-5 mb-5'>
                                     <h1 className='my-3 text-2xl'>General</h1>
